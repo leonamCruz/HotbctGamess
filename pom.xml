@@ -10,7 +10,7 @@
     </parent>
     <groupId>top.leonam</groupId>
     <artifactId>HotbctGamess</artifactId>
-    <version>1</version>
+    <version>2</version>
     <name>HotbctGamess</name>
     <description>HotbctGamess</description>
     <url/>
@@ -47,11 +47,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
         <dependency>
@@ -68,6 +63,11 @@
             <artifactId>caffeine</artifactId>
             <version>3.2.3</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
