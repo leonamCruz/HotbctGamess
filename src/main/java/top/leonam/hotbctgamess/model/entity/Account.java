@@ -41,7 +41,7 @@ public class Account {
 
     @PrePersist
     public void prePersist() {
-        if (this.balance == null) this.balance = BigDecimal.valueOf(1000);
+        if (this.balance == null) this.balance = BigDecimal.ZERO;
         if (this.status == null) this.status = BankStatus.ATIVO;
     }
 
