@@ -16,7 +16,7 @@ public class BailCommand implements Command {
     private PrisonService prisonService;
     @Override
     public String name() {
-        return "?pagarfianca";
+        return "?pagarfiança";
     }
 
     @Override
