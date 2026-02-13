@@ -12,18 +12,17 @@ import java.util.concurrent.TimeUnit;
 public class CacheConfig {
 
     @Bean
-    public CacheManager cacheManager() {
-        CaffeineCacheManager manager = new CaffeineCacheManager(
-                "crimes",
-                "crimeByName"
-        );
+    public Caffeine<Object, Object> caffeineConfig() {
+        return Caffeine.newBuilder()
+                .maximumSize(100)
+                .expireAfterWrite(5, TimeUnit.MINUTES)
+                .recordStats();
+    }
 
-        manager.setCaffeine(
-                Caffeine.newBuilder()
-                        .maximumSize(1_000)
-                        .expireAfterWrite(1, TimeUnit.HOURS)
-        );
-
+    @Bean
+    public CacheManager cacheManager(Caffeine<Object, Object> caffeine) {
+        CaffeineCacheManager manager = new CaffeineCacheManager("dailyStats");
+        manager.setCaffeine(caffeine);
         return manager;
     }
 }
