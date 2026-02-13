@@ -7,7 +7,7 @@ import java.math.BigInteger;
 import java.time.LocalDate;
 
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"date"}))
+@Table
 @Data
 public class DailyStats {
 
